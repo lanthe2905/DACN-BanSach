@@ -1,0 +1,17 @@
+{
+    "all_product":
+    [
+        {
+            "name":"Sách công nghệ thông tin",
+            "query":"{}"
+        },
+        {
+            "name":"Sách văn học",
+            "query":""
+        },
+        {
+            "name":"Sách kỹ năng sống",
+            "query":""
+        }
+    ]  
+}

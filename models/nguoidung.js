@@ -5,7 +5,7 @@ var LoaiND = require('./loaind')
 class NguoiDung extends Model{}
 NguoiDung.init({
     maND :{
-        type: Sequelize.BigInt,
+        type: Sequelize.BIGINT,
         primaryKey: true,
         allowNull: true,
         autoIncrement:true
@@ -34,10 +34,9 @@ NguoiDung.init({
         type:Sequelize.DATE
     },
     active:{
-        type:{
-            type:Sequelize.INTEGER(1)
-        }
-    }
+        type: Sequelize.INTEGER(1)
+        
+    },
 },{sequelize})
 
 NguoiDung.belongsTo(LoaiND,{foreignKey:'maLoaiNguoiDung'})

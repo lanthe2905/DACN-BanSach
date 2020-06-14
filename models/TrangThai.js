@@ -5,7 +5,7 @@ class NguoiDung extends Model{}
 
 NguoiDung.init({
     maTT:{
-        type: Sequelize.BigInt,
+        type: Sequelize.BIGINT,
         primaryKey: true,
         allowNull: true,
         autoIncrement:true

@@ -11,13 +11,7 @@ SanPham.init({
         primaryKey: true,
         autoIncrement: true
     },
-    maLoaiSP:{
-        type:Sequelize.BIGINT,
-        references:{
-            model: loaiSP,
-            key : 'maLoaiSP'
-        }
-    },
+
     tenSP :{
         type:Sequelize.STRING, 
     },
@@ -27,13 +21,7 @@ SanPham.init({
     soLuong: {
         type: Sequelize.INTEGER
     },
-    maTG :{
-        type: Sequelize.BIGINT,
-        references:{
-            model: tacGia,
-            key: 'maTG'
-        }
-    },
+
     moTa:{
         type: Sequelize.TEXT
     },
@@ -64,5 +52,6 @@ SanPham.init({
     }
 
 },{sequelize})
-
+SanPham.belongsTo(tacGia,{foreignKey:"maTacGia"})
+SanPham.belongsTo(loaiSP,{foreignKey:"maLoai"})
 module.exports = SanPham
