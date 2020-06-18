@@ -1,6 +1,7 @@
 const sequelize = require('../property/Database')
 const {Model,Sequelize} = require('sequelize')
 const test = require('./test')
+const { tableName } = require('./test')
 class Test2 extends Model{}
 
 Test2.init({
@@ -9,7 +10,7 @@ Test2.init({
 },{sequelize})
 
 test.hasMany(Test2)
-Test2.belongsTo(test,{foreignKey:{allowNull:false}})
+Test2.belongsTo(test,{foreignKey:{allowNull:false},targetKey:"id"})
 Test2.belongsTo(test,{foreignKey:{name:'fk_userID',field:'userID'}})
 
 /* =============== create ---------------------- */
@@ -20,19 +21,20 @@ Test2.belongsTo(test,{foreignKey:{name:'fk_userID',field:'userID'}})
 //     console.log(error);
 // })
 
-// Test2.create({age:12,userID:1})
-// .then(item =>{
+Test2.create({age:13,testId:1,fk_userID:1})
+.then(item =>{
 
-// })
+})
 
 /* =============== Search ---------------------- */
 
 
 
-// Test.findAll({
+// test.findAll({
 //     where:{
-//         age: 19
+//         age: 1
 //     },
+//     include: Test2,
 //     raw:true
 // }).then(item =>{
 //     console.log(item);

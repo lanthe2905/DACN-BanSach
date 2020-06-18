@@ -1,16 +1,16 @@
 {
 	"all_product": [
 		{
-			"name": "Sách công nghệ thông tin",
-			"query": ""
+			"tenLoai": "Book information technology",
+			"maLoai": ""
 		},
 		{
-			"name": "Sách văn học",
-			"query": ""
+			"tenLoai": "Sách văn học",
+			"maLoai": ""
 		},
 		{
-			"name": "Sách kỹ năng sống",
-			"query": ""
+			"tenLoai": "Sách kỹ năng sống",
+			"maLoai": ""
 		}
 	]
 }

@@ -13,8 +13,9 @@ const sequelize = new Sequelize('ban_sach','root','root',{
   host: 'localhost',
   dialect:'mysql',
   define:{
-    freezeTableName: true
-    ,paranoid:true
+    freezeTableName: true,
+    // underscored:true,
+    paranoid:true
   }
 });
 

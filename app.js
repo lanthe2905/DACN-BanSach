@@ -33,12 +33,11 @@ i18n.setLocale('vi')
 
 app.use(cookieParser())
 app.use(i18n.init)
-console.log(JSON.stringify( i18n.__("all_product")));
 
 
 // ====== middleware file =============
 app.use(express.static('public'))
-app.use('/user', express.static( 'public'))
+app.use('/user', express.static('public'))
 app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 app.use('/',require('./router/home_page'))
@@ -47,10 +46,10 @@ app.use('/users', require('./router/user'))
 
 
 // ====== Handling Error =============
-app.use(function (err, req, res, next) {
-  console.error(err.stack)
-  res.status(500).send('Something broke!')
-})
+// app.use(function (err, req, res, next) {
+//   console.error(err.stack)
+//   res.status(500).send('Something broke!')
+// })
 
 
 

@@ -14,8 +14,7 @@ Test.init({
             max:30
         }
     }                                     
-},{sequelize})
-
+},{sequelize,modelName: 'test'})
 
 // Test.create({age:1,score:1},{fields:['age']})
 // .then(item =>{

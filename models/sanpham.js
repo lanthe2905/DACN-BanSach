@@ -2,6 +2,7 @@ const sequelize = require('../property/Database')
 const {Model,Sequelize} = require('sequelize')
 const loaiSP = require('./loaisp')
 const tacGia = require('./tacgia')
+const HinhAnh = require('./hinhanh')
 class SanPham extends Model{}
 
 SanPham.init({
@@ -54,4 +55,6 @@ SanPham.init({
 },{sequelize})
 SanPham.belongsTo(tacGia,{foreignKey:"maTacGia"})
 SanPham.belongsTo(loaiSP,{foreignKey:"maLoai"})
+SanPham.hasMany(HinhAnh,{foreignKey:"maSP"})
+
 module.exports = SanPham

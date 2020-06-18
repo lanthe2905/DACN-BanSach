@@ -16,7 +16,6 @@ TacGia.init({
     gioiThieu:{type:Sequelize.TEXT}
 },{sequelize,modelName: 'tacGia'})
 
-TacGia.sync({force:true});
 
 module.exports = TacGia
 
