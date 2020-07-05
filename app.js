@@ -34,7 +34,7 @@ i18n.setLocale('vi')
 app.use(cookieParser())
 app.use(i18n.init)
 
-
+require("./router/router")(app)
 // ====== middleware file =============
 app.use(express.static('public'))
 app.use('/user', express.static('public'))

@@ -1,26 +1,17 @@
+const sanpham  = require("../models/sanpham");
+var   hinhAnh = require('../models/hinhanh')
+const  {Sequelize}  = require('sequelize')
 
-const SanPham = require('../models/sanpham')
-const LoaiSanPham = require('../models/loaisp')
-const  {Sequelize}  = require('sequelize');
-const { raw } = require('body-parser');
-const Op = Sequelize.Op;
-
-
-function getFromLoaiSP(arrQuery){
-    return SanPham.findAll({
+function getSP(masp){
+    return sanpham.findByPk(masp,{
         include:[{
-            model: LoaiSanPham,
-            where: {maLoai:{
-                [Op.in]:[...arrQuery]
-             }}
-            ,attributes:['maLoai','tenLoai']
-        }],
-        raw:true
+            model: hinhAnh
+        }]
+        
     })
 }
 
-
-
 module.exports = {
-    getFromLoaiSP: getFromLoaiSP
+    getSP:  getSP
+
 }

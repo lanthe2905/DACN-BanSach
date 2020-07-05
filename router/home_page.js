@@ -6,4 +6,5 @@ router.get([,'/','/home','/trangchu','/index'], (req,res) =>{
     HomeController.buildHomePage(req,res)
 })
 
+
 module.exports = router
